@@ -1,0 +1,37 @@
+DECLARE myStr : STRING
+DECLARE IsPangram : BOOLEAN
+DECLARE Character : CHAR
+DECLARE ascii : INTEGER
+DECLARE length : INTEGER 
+DECLARE str : STRING 
+
+'INITITIALISATION
+myStr = ""
+IsPangram = False
+Character = ''
+length = 0
+str = ""
+
+'Input
+OUTPUT "Enter the string: "
+INPUT myStr
+
+str = UPPER(myStr) 
+FOR ascii = 65 TO 90
+    FOR length = 1 TO LENGTH(str)
+        Character = MID(str, length, 1)
+        IF ASC(Character) = ascii
+          THEN
+            IsPangram = True
+            EXIT FOR
+          ELSE
+            IsPangram = False
+        ENDIF
+    ENDFOR
+ENDFOR
+
+IF IsPangram = True 
+  THEN 
+    OUTPUT "It is a Pangram"
+  ELSE
+    OUTPUT "It is not a pangram"
