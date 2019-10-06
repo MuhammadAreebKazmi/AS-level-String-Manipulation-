@@ -1,0 +1,38 @@
+DECLARE str1 : STRING
+DECLARE str2 : STRING
+DECLARE FirstName : STRING
+DECLARE LastName : STRING
+DECLARE Fullstr : STRING
+DECLARE X : INTEGER
+DECLARE loop1 : INTEGER
+DECLARE chr : CHAR
+CONSTANT space = ' '
+DECLARE B : INTEGER
+
+OUTPUT" ENTER FIRST STRING: "
+INPUT str1
+
+OUTPUT" ENTER SECOND STRING: "
+INPUT str2
+
+FIrstName = ""
+LastName = ""
+Fullstr = ""
+X = 0
+Chr = ''
+
+X = LOCATE(str1, ' ')
+FirstName = LEFT(str1, X - 1)
+
+FOR loop1 = 1 To LENGTH(str2)
+    Chr = MID(str, loop1, 1)
+    IF Chr = Space
+      THEN 
+        B = loop1
+    ENDIF
+ENDFOR
+
+LastName = RIGHT(str2, LENGTH(str2) - B)
+Fullstr = FIrstName & ' ' & LastName
+
+OUTPUT"the strings combined are: ",Fullstr
