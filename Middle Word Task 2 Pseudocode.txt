@@ -1,0 +1,19 @@
+DECLARE str : STRING
+DECLARE X : INTEGER
+DECLARE Y : INTEGER
+DECLARE Midword : STRING
+
+str = ""
+X = 0
+Y = 0
+Midword = ""
+
+OUTPUT "ENTER THE STRING: "
+INPUT str
+
+X = LOCATE(str, " ")
+Y = LOCATE(X + 1, str, " ")
+
+Midword = Mid(str, X + 1, Y - X - 1)
+
+OUTPUT" THE MIDDLE WORD OF STRING IS: ", Midword
