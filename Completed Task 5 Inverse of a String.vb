@@ -7,21 +7,23 @@
         Dim loopno As Integer
         Dim InvChar As Char
         Dim InvStr As String
+        Dim ucasestring As String = ""
 
         myChar = ""
         loopno = 1
         InvChar = ""
         InvStr = ""
 
-        Console.Write("Enter the string which needs to be inversed")
+        Console.Write("Enter the string which needs to be inversed: ")
         myStr = Console.ReadLine
-        InvChar = Mid(myStr, Len(myStr), 1)
-        InvStr = InvStr & InvChar
-        For loopno = 1 To Len(myStr)
-            InvChar = Mid(myStr, Len(myStr) - loopno, 1)
+
+        For loopno = Len(myStr) To 1 Step -1
+            InvChar = Mid(myStr, loopno, 1)
             InvStr = InvStr & InvChar
         Next
-        Console.WriteLine("The inverse of the string is " & InvStr)
+
+        ucasestring = UCase(InvStr)
+        Console.WriteLine("The inverse of the string is " & ucasestring)
         Console.ReadKey()
     End Sub
 
