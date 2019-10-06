@@ -11,6 +11,7 @@
         Dim loop1 As Integer
         Dim Chr As Char
         Const Space = " "
+        Dim B As Integer = 0
 
         'Initialisation
         Console.Write("Enter first string ")
@@ -30,19 +31,17 @@
 
         'For Second String
         For loop1 = 1 To Len(Str2)
-            Chr = Mid(Str2, Len(Str2) - loop1, 1)
+            Chr = Mid(Str2, loop1, 1)
             If Chr = Space Then
-                X = InStr(Str2, Chr)
-                LastName = Right(Str2, Len(Str2) - X)
+                B = loop1
             End If
         Next
+        LastName = Right(Str2, Len(Str2) - B)
         FullName = FirstName & " " & LastName
 
         'Doing Output
         Console.WriteLine("The Strings combined are: " & FullName)
-        Console.ReadKey("Press F")
-
-
+        Console.ReadKey()
     End Sub
 
 End Module
