@@ -27,7 +27,7 @@
             For Charsloop = 1 To Len(myStr)
                 UnwantedChar = Mid(DisallowedChar, Charsloop, 1)
             Next
-            If Char1 <> UnwantedChar Then
+    If Char1 <> DisallowedChar Then
                 NewStr = NewStr & Char1
             End If
         Next
