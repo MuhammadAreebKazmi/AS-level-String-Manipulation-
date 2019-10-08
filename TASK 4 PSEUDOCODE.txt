@@ -1,0 +1,31 @@
+DECLARE mystr : STRING
+DECLARE Newstr : STRING
+DECLARE Char1 : CHARACTER
+DECLARE length : INTEGER
+DECLARE DisallowedChar : STRING
+DECLARE charsloop : INTEGER
+DECLARE UnwantedChar : CHARACTER
+
+Char1 = ''
+length = 0
+Newstr = ""
+UnwantedChar = ''
+
+OUTPUT" ENTER THE WHOLE STRING: "
+INPUT mystr
+
+OUTPUT"ENTER THE CHARACTER TO BE TRUNCATED: "
+INPUT DisallowedChar 
+
+FOR length = 1 To LENGTH(mystr)
+    Char1 = MID(mystr, length, 1)
+    FOR charsloop = 1 to LENGTH(DisallowedChar)
+        UnwantedChar = MID(DisallowedChar, Charsloop, 1)
+    ENDFOR
+IF Char1 <> DisAllowedChar 
+  THEN
+    Newstr = Newstr & Char1
+ENDIF
+ENDFOR
+
+OUTPUT"New string with the unwanted characters truncated is: ",Newstr
