@@ -1,0 +1,34 @@
+DECLARE mystr : STRING
+DECLARE mychar : CHARACTER
+DECLARE letters : STRING
+DECLARE numbers : STRING
+DECLARE specials : STRING
+DECLARE value : INTEGER
+DECLARE counter : INTEGER
+
+mychar = ''
+letters = ""
+numbers = ""
+specials = ""
+value = 0
+counter = 0
+
+OUTPUT"Enter the string: "
+INPUT mystr
+
+FOR counter = 1 TO LENGTH(mystr)
+    mychar = MID(mystr, counter, 1)
+    value = ASC(mychar)
+    IF value >= 65 AND value<= 90 OR Value>= 97 AND value <= 122 
+      THEN 
+        letters = letters & mychar
+      ELSEIF value >= 48 AND value <= 57
+        THEN 
+          numbers = numbers & mychar
+      ELSE : specials = specials & mychar
+    ENDIF
+ENDFOR
+
+OUTPUT"The letters separated are: ",letters
+OUTPUT"The numbers separated are: ",numbers
+OUTPUT"The specials separated are: ",specials
