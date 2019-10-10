@@ -1,0 +1,43 @@
+DECLARE str1 : STRING
+DECLARE str2 : STRING
+DECLARE chr1 : CHARACTER
+DECLARE chr2 : CHARACTER
+DECLARE Ascsum1 : INTEGER
+DECLARE Ascsum2 : INTEGER
+DECLARE loop1 : INTEGER
+DECLARE loop2 : INTEGER
+DECLARE ascvalue1 : INTEGER
+DECLARE ascvalue2 : INTEGER
+
+str1 = ""
+str2 = ""
+chr1 = ''
+chr2 = ''
+ascsum1 = 0
+ascsum2 = 0
+ascvalue1 = 0
+ascvalue2 = 0
+
+OUTPUT "Enter the first string to check for anagram: "
+INPUT str1
+OUTPUT "Enter the second string to check for anagram: "
+INPUT str2
+
+FOR loop1 = 1 TO LENGTH(str1)
+    chr1 = MID(str1, loop1, 1)
+    ascvalue1 = ASC(chr1)
+    Ascsum1 = Ascsum1 + ascvalue1
+ENDFOR
+
+FOR loop2 = 1 TO LENGTH(str2)
+    chr1 = MID(str2, loop2, 1)
+    ascvalue2 = ASC(chr2)
+    Ascsum2 = Ascsum2 + ascvalue2
+ENDFOR
+
+IF Ascsum1 = Ascsum2 
+  THEN
+    OUTPUT"This is an Anagram"
+  ELSE
+    OUTPUT"this is not an anagram"
+ENDIF
