@@ -1,0 +1,23 @@
+DECLARE mystr : STRING
+DECLARE mychar : CHARACTER 
+DECLARE loopno : INTEGER
+DECLARE Invstr : STRING
+DECLARE InvChar : STRING
+DECLARE uncasestring : STRING
+
+mychar = ''
+loopno = 1
+InvChar = ''
+Invstr = ""
+
+OUTPUT" Enter the string which needs to be inversed"
+IINPUT mystr
+
+FOR loopno = LENGTH(mystr) TO  1 (STEP -1)
+    InvChar = MID(mystr, loopno, 1)
+    Invstr = Invstr & InvChar
+ENDFOR
+
+ucasestring = UPPER(Invstr)
+
+OUTPUT"The inverse of the string is: ", ucasestring
