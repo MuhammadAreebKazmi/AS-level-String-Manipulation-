@@ -21,6 +21,7 @@
                 Newstr = ""
             End If
         Next
+        Console.WriteLine(Newstr)
         Console.ReadKey()
     End Sub
 
