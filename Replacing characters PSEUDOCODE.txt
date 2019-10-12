@@ -1,0 +1,32 @@
+DECLARE mystr : STRING
+DECLARE newstr : STRING
+DECLARE chr1 : CHARACTER
+DECLARE unwantedchar : CHARACTER
+DECLARE replacingchar : CHARACTER
+DECLARE loop1 : INTEGER
+
+mystr = ""
+newstr = ""
+chr1 = ''
+unwantedchar = ''
+replacingchar = ''
+loop1 = 0
+
+OUTPUT "Enter the string: "
+INPUT mystr
+OUTPUT "Enter the character that needs to be replaced: "
+INPUT unwantedchar
+OUTPUT "Enter the character that will be replaced in place of character: "
+INPUT replacingchar
+
+FOR loop1 = 1 TO LENGTH(mystr)
+    chr1 = MID(mystr, loop1, 1)
+    IF chr1 = unwantedchar 
+      THEN
+        newstr = newstr & replacingchar
+      ELSE 
+        newstr = newstr & chr1
+    ENDIF
+ENDFOR
+
+OUTPUT "The string with characters replaced is: "
